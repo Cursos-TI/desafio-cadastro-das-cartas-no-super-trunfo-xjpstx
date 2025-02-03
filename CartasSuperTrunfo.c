@@ -37,7 +37,7 @@ int main() {
     PIB
     */
 
-    printf("\nSua carta %c%d contém: \nEstado: %s \nCidade: %s \nPopulação: %d pessoas \nÁrea: %.2f km² \nPontos turísticos: %d \nPIB: %.4f", letra, numero, estado, cidade, populacao, area, pturistico, pib);
+    printf("\nSua carta %c%d contém: \nEstado: %s \nCidade: %s \nPopulação: %d pessoas \nÁrea: %.2f km² \nPontos turísticos: %d \nPIB: %.4f bilhões de reais", letra, numero, estado, cidade, populacao, area, pturistico, pib);
 
     return 0;
 }
