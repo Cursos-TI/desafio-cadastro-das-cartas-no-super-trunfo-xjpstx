@@ -29,13 +29,15 @@ int main() {
 
     /*Ao colocar o que se pede, o prompt exibirá as seguintes informações:
     Código da Carta (nome)
+    Nome do estado
+    Nome da cidade
     População
     Área
     Pontos turísticos
     PIB
     */
 
-    printf("\nSua carta %c%d contém: \numa população de %d pessoas \numa área de %.2f km² \n%d pontos turísticos \nPIB de %.4f", letra, numero, populacao, area, pturistico, pib);
+    printf("\nSua carta %c%d contém: \nEstado: %s \nCidade: %s \nPopulação: %d pessoas \nÁrea: %.2f km² \nPontos turísticos: %d \nPIB: %.4f", letra, numero, estado, cidade, populacao, area, pturistico, pib);
 
     return 0;
 }
