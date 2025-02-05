@@ -1,31 +1,45 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
     char letra; // letra do estado (a ser utilizado no código da carta)
     int numero; // número da cidade (a ser utilizado no código da carta)
     int populacao, pturistico; // informações da cidade (população e os pontos turísticos)
     char estado[100]; // informações da carta (nome do estado)
     char cidade[100]; // informações da carta (nome da cidade)
-    float pib, area; // PIB e área da cidade
+    float dpopulacional, pibcapita, pib, area; // densidade populacional, PIB per capita, PIB e área da cidade
 
-    printf("Digite o nome do estado: "); // o usuário é solicitado a enviar o nome do estado
+void geral(){
+    printf("Digite o nome do estado: "); 
+    // o usuário é solicitado a enviar o nome do estado
     fgets(estado, sizeof(estado), stdin);
     estado[strcspn(estado, "\n")] = 0;
 
-    printf("Digite o nome da cidade: "); // o usuário é solicitado a enviar o nome da cidade
+    printf("Digite o nome da cidade: "); 
+    // o usuário é solicitado a enviar o nome da cidade
     fgets(cidade, sizeof(cidade), stdin);
     cidade[strcspn(cidade, "\n")] = 0;
 
-    printf("\nDigite o código da carta na ordem letra (do estado) e número (da cidade): "); // o usuário é solicitado a colocar o código no formato de letra e número (A1, A2, etc)
+    printf("\nDigite o código da carta na ordem letra (do estado) e número (da cidade): \n"); 
+    // o usuário é solicitado a colocar o código no formato de letra e número (A1, A2, etc)
     scanf(" %c %d", &letra, &numero);
-    printf("A sua carta escolhida foi %c%d", letra, numero);
 
-    printf("\nInsira a população e os pontos turísticos da sua cidade: "); // o usuário é solicitado a colocar informações adicionais
+    printf("Insira a população e os pontos turísticos da sua cidade: \n"); 
+    // o usuário é solicitado a colocar informações adicionais
     scanf("%d %d", &populacao, &pturistico);
 
-    printf("Insira a área e o PIB da sua cidade: "); // o usuário é solicitado a colocar informações adicionais
+    printf("Insira a área e o PIB da sua cidade: \n"); 
+    // o usuário é solicitado a colocar informações adicionais
     scanf("%f %f", &area, &pib);
+}
+
+void calculo(){
+    dpopulacional = (float)populacao / area; 
+    // cálculo da densidade populacional através da divisão da população e área da cidade
+    pibcapita = (int)populacao / pib; 
+    // cálculo do PIB per capita através da divisão do PIB e da população da cidade
+}
+
+void exibicao(){
 
     /*Ao colocar o que se pede, o prompt exibirá as seguintes informações:
     Código da Carta (nome)
@@ -33,11 +47,23 @@ int main() {
     Nome da cidade
     População
     Área
+    Densidade populacional
     Pontos turísticos
     PIB
+    PIB per capita
     */
 
-    printf("\nSua carta %c%d contém: \nEstado: %s \nCidade: %s \nPopulação: %d pessoas \nÁrea: %.2f km² \nPontos turísticos: %d \nPIB: %.4f bilhões de reais", letra, numero, estado, cidade, populacao, area, pturistico, pib);
+     printf("\nSua carta %c%d contém: \nEstado: %s \nCidade: %s \nPopulação: %d pessoas", letra, numero, estado, cidade, populacao);
+     printf("\nÁrea: %.2f km² \nPontos turísticos: %d \nPIB: %.3f bilhões de reais", area, pturistico, pib);
+     printf("\nDensidade Populacional: %.2f pessoas/km²", dpopulacional);
+     printf("\nPIB per capita: %.0f reais", pibcapita); 
+}
+
+int main(){
+
+    geral();
+    calculo();
+    exibicao();
 
     return 0;
 }
