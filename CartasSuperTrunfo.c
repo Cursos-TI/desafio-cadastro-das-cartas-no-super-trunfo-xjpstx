@@ -9,6 +9,7 @@
     float dpopulacional, pibcapita, pib, area; // densidade populacional, PIB per capita, PIB e área da cidade
 
 void geral(){
+    
     printf("Digite o nome do estado: "); 
     // o usuário é solicitado a enviar o nome do estado
     fgets(estado, sizeof(estado), stdin);
@@ -33,6 +34,7 @@ void geral(){
 }
 
 void calculo(){
+
     dpopulacional = (float)populacao / area; 
     // cálculo da densidade populacional através da divisão da população e área da cidade
     pibcapita = (int)populacao / pib; 
