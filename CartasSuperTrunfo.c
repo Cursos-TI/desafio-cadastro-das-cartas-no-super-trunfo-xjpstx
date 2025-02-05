@@ -11,7 +11,7 @@
     // informações da carta (nome do estado)
     char cidade1[100], cidade2[100]; 
     // informações da carta (nome da cidade)
-    float dpopulacional1, pibcapita1, pib1, area1, dpopulacional2, pibcapita2, pib2, area2; 
+    float dpopulacional1, pibpercapita1, pib1, area1, dpopulacional2, pibpercapita2, pib2, area2; 
     // densidade populacional, PIB per capita, PIB e área da cidade
     float superpoder1, superpoder2; 
     // soma de todas as propriedades da carta 1 e da carta 2 
@@ -71,17 +71,17 @@ void calculo(){
 
     dpopulacional1 = (float)populacao1 / area1; 
     // cálculo da densidade populacional através da divisão da população e área da cidade
-    pibcapita1 = (int)populacao1 / pib1; 
+    pibpercapita1 = (int)populacao1 / pib1; 
     // cálculo do PIB per capita através da divisão da população e do PIB da cidade
 
     dpopulacional2 = (float)populacao2 / area2; 
     // cálculo da densidade populacional através da divisão da população e área da cidade
-    pibcapita2 = (int)populacao2 / pib2; 
+    pibpercapita2 = (int)populacao2 / pib2; 
     // cálculo do PIB per capita através da divisão da população e do PIB da cidade
 
-    superpoder1 = populacao1 + pturistico1 + area1 + dpopulacional1 + pib1 + pibcapita1;
+    superpoder1 = populacao1 + pturistico1 + area1 + dpopulacional1 + pib1 + pibpercapita1;
     // soma de todas as propriedades da carta 1
-    superpoder2 = populacao2 + pturistico2 + area2 + dpopulacional2 + pib2 + pibcapita2;
+    superpoder2 = populacao2 + pturistico2 + area2 + dpopulacional2 + pib2 + pibpercapita2;
     // soma de todas as propriedades da carta 2
 }
 
@@ -89,20 +89,20 @@ void exibicao1(){
 
     /*Ao colocar o que se pede, o prompt exibirá as seguintes informações:
     Código da Carta 1 (nome)
-    Nome do estado
+    Nome do estado 
     Nome da cidade
     População
-    Área
-    Densidade populacional
+    Área    
     Pontos turísticos
-    PIB
+    PIB        
+    Densidade populacional
     PIB per capita
     */
 
      printf("\nSua carta %c%d contém: \nEstado: %s \nCidade: %s \nPopulação: %d pessoas", letra1, numero1, estado1, cidade1, populacao1);
      printf("\nÁrea: %.2f km² \nPontos turísticos: %d \nPIB: %.3f bilhões de reais", area1, pturistico1, pib1);
      printf("\nDensidade Populacional: %.2f pessoas/km²", dpopulacional1);
-     printf("\nPIB per capita: %.0f reais", pibcapita1); 
+     printf("\nPIB per capita: %.0f reais", pibpercapita1); 
      printf("\n----------------------------\n"); // adiciona uma linha de separação
 }
 
@@ -114,16 +114,16 @@ void exibicao2(){
     Nome da cidade
     População
     Área
-    Densidade populacional
     Pontos turísticos
     PIB
+    Densidade populacional
     PIB per capita
     */
 
      printf("\nSua carta %c%d contém: \nEstado: %s \nCidade: %s \nPopulação: %d pessoas", letra2, numero2, estado2, cidade2, populacao2);
      printf("\nÁrea: %.2f km² \nPontos turísticos: %d \nPIB: %.3f bilhões de reais", area2, pturistico2, pib2);
      printf("\nDensidade Populacional: %.2f pessoas/km²", dpopulacional2);
-     printf("\nPIB per capita: %.0f reais", pibcapita2); 
+     printf("\nPIB per capita: %.0f reais", pibpercapita2); 
      printf("\n----------------------------\n"); // adiciona uma linha de separação
 }
 
@@ -141,7 +141,7 @@ void ganhador(){
 
     printf("\nQuem venceu em PIB? %d", pib1 > pib2);
 
-    printf("\nQuem venceu em PIB per capita? %d", pibcapita1 > pibcapita2);
+    printf("\nQuem venceu em PIB per capita? %d", pibpercapita1 > pibpercapita2);
 
     printf("\nQuem venceu a partida? %d", superpoder1 > superpoder2);
 
